@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title class="titulo">Compra de entradas para el concierto de agosto</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+	<h1>Compra de entradas para el concierto de agosto</h1>
+	
+	<form id="formCompra" onsubmit="return false;">
+		<label for="fecha">Fecha del concierto:</label>
+		<select id="fecha" name="fecha">
+			<option value="10 de agosto del 2023">10 de agosto del 2023</option>
+			<option value="13 de agosto del 2023">13 de agosto del 2023</option>
+		</select>
+		<br>
+		
+		<label for="tipoEntrada">Tipo de entrada:</label>
+		<select id="tipoEntrada" name="tipoEntrada">
+			<option value="vip">VIP</option>
+			<option value="vip general">VIP general</option>
+			<option value="general">General</option>
+			<option value="graderia">Gradería</option>
+		</select>
+		<br>
+		
+		<label for="cantidad">Cantidad de entradas:</label>
+		<input type="number" id="cantidad" name="cantidad" min="1" max="2" required>
+		<br>
+		
+		<label for="formaPago">Forma de pago:</label>
+		<select id="formaPago" name="formaPago">
+			<option value="efectivo">Efectivo</option>
+			<option value="tarjeta">Tarjeta de crédito</option>
+		</select>
+		<br>
+		
+		<button onclick="calcularTotal()">Calcular total</button>
+		<br><br>
+		
+		<label for="subtotal">Subtotal:</label>
+		<input type="text" id="subtotal" name="subtotal" disabled>
+		<br>
+		
+		<label for="descuento">Descuento:</label>
+		<input type="text" id="descuento" name="descuento" disabled>
+		<br>
+		
+		<label for="total">Total:</label>
+		<input type="text" id="total" name="total" disabled>
+		<br><br>
+		
+		<button onclick="confirmarCompra()">Confirmar compra</button>
+		<button onclick="cancelarCompra()">Cancelar compra</button>
+	</form>
